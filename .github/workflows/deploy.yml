@@ -63,6 +63,6 @@ jobs:
       - name: Setup SOPS
         uses: nhedger/setup-sops@v2
       - name: Decrypt Files
-        run: find "$APP" -type f | xargs grep -l 'sops:' | xargs -r sops --decrypt --in-place
+        run: find "$APP" -type f | xargs grep -l 'BEGIN AGE ENCRYPTED FILE' | xargs -r sops --decrypt --in-place
       - name: Deploy
         run: flyctl deploy --app "$APP" --config "$APP/fly.toml" > /dev/null
