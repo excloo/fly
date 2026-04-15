@@ -48,4 +48,3 @@ jobs:
         run: find "$APP" -type f | xargs grep -l 'sops:' | xargs -r sops --decrypt --in-place
       - name: Deploy
         run: flyctl deploy --app "$APP" --config "$APP/fly.toml"
-  
