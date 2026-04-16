@@ -64,10 +64,9 @@ jobs:
         uses: nhedger/setup-sops@v2
       - name: Decrypt Files
         run: find "$APP" -type f | xargs grep -l 'BEGIN AGE ENCRYPTED FILE' | xargs -r sops --decrypt --in-place
+      - name: Create App
+        run: flyctl apps create "$APP" || true
+      - name: Import Secrets
+        run: test -f "$APP/.env" && cat "$APP/.env" | flyctl secrets import --app "$APP" || true
       - name: Deploy
-        run: |
-          if ! flyctl status --app "$APP" > /dev/null 2>&1; then
-            echo "App $APP does not exist. Creating..."
-            flyctl apps create "$APP"
-          fi
-          flyctl deploy --app "$APP" --config "$APP/fly.toml" > /dev/null
+        run: flyctl deploy --app "$APP" --config "$APP/fly.toml" > /dev/null
