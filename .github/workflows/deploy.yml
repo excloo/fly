@@ -47,6 +47,9 @@ jobs:
     name: Deploy
     needs: [changed-files]
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ${{ matrix.app }}
     strategy:
       fail-fast: false
       matrix:
@@ -63,10 +66,10 @@ jobs:
       - name: Setup SOPS
         uses: nhedger/setup-sops@v2
       - name: Decrypt Files
-        run: find "$APP" -type f | xargs grep -l 'BEGIN AGE ENCRYPTED FILE' | xargs -r sops --decrypt --in-place
+        run: find . -type f | xargs grep -l 'BEGIN AGE ENCRYPTED FILE' | xargs -r sops --decrypt --in-place
       - name: Create App
         run: flyctl apps create "$APP" || true
       - name: Import Secrets
-        run: test -f "$APP/.env" && grep -v '^sops_' "$APP/.env" | flyctl secrets import --app "$APP" || true
+        run: test -f .env && grep -v '^sops_' .env | flyctl secrets import --app "$APP" || true
       - name: Deploy
-        run: flyctl deploy --app "$APP" --config "$APP/fly.toml" > /dev/null
+        run: flyctl deploy --app "$APP" --config fly.toml > /dev/null
