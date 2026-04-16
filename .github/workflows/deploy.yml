@@ -66,7 +66,7 @@ jobs:
       - name: Setup SOPS
         uses: nhedger/setup-sops@v2
       - name: Decrypt Files
-        run: find . -type f | xargs grep -l 'BEGIN AGE ENCRYPTED FILE' | xargs -r sops --decrypt --in-place
+        run: find . -type f | xargs grep -l 'BEGIN AGE ENCRYPTED FILE' | xargs -n 1 -r sops --decrypt --in-place
       - name: Create App
         run: flyctl apps create "$APP" || true
       - name: Import Secrets
