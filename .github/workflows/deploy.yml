@@ -67,6 +67,6 @@ jobs:
       - name: Create App
         run: flyctl apps create "$APP" || true
       - name: Import Secrets
-        run: test -f "$APP/.env" && cat "$APP/.env" | flyctl secrets import --app "$APP" || true
+        run: test -f "$APP/.env" && grep -v '^sops_' "$APP/.env" | flyctl secrets import --app "$APP" || true
       - name: Deploy
         run: flyctl deploy --app "$APP" --config "$APP/fly.toml" > /dev/null
