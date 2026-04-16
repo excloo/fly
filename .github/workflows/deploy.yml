@@ -65,4 +65,9 @@ jobs:
       - name: Decrypt Files
         run: find "$APP" -type f | xargs grep -l 'BEGIN AGE ENCRYPTED FILE' | xargs -r sops --decrypt --in-place
       - name: Deploy
-        run: flyctl deploy --app "$APP" --config "$APP/fly.toml" > /dev/null
+        run: |
+          if ! flyctl status --app "$APP" > /dev/null 2>&1; then
+            echo "App $APP does not exist. Creating..."
+            flyctl apps create "$APP"
+          fi
+          flyctl deploy --app "$APP" --config "$APP/fly.toml" > /dev/null
