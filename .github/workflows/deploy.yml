@@ -47,6 +47,9 @@ jobs:
     name: Deploy
     needs: [changed-files]
     runs-on: ubuntu-latest
+    concurrency:                  
+      cancel-in-progress: true                              
+      group: deploy-${{ matrix.app }}
     defaults:
       run:
         working-directory: ${{ matrix.app }}
