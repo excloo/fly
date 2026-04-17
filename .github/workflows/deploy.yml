@@ -71,7 +71,5 @@ jobs:
         run: flyctl apps create "$APP" || true
       - name: Import Secrets
         run: test -f .env && grep -v '^sops_' .env | flyctl secrets import --app "$APP" || true
-      - name: Debug                                                                                                                                                                      
-        run: find . -type f  
       - name: Deploy
         run: flyctl deploy --app "$APP" --config fly.toml > /dev/null
