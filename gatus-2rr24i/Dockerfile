@@ -1,12 +1,14 @@
-FROM ghcr.io/twin/gatus:stable AS gatus
-FROM docker.io/tailscale/tailscale:stable AS tailscale
-FROM alpine:latest
-RUN apk add --no-cache ca-certificates iptables ip6tables \
-    && mkdir -p /var/cache/tailscale /var/lib/tailscale /var/run/tailscale
-WORKDIR /app
-COPY --from=gatus /gatus gatus
-COPY --from=tailscale /usr/local/bin/tailscaled tailscaled
-COPY --from=tailscale /usr/local/bin/tailscale tailscale
-COPY app/ ./
-COPY --chmod=755 start.sh start.sh
-ENTRYPOINT ["/app/start.sh"]
+{
+	"data": "ENC[AES256_GCM,data:ZF9qodsQ9oO5Ex7PK5dU6eXXcrQxJPZDSfSXXUVVSJf8Y8ANRwbgzJzYBD2iqIMTb9t5SuxxYRe17wAjVTIh7WV6GR0HYtftACuXHrfLEwZHCMCDLUVVCdUa857P6F/ZiMnYVMFvyZnoQMcU2InBsv1OPzc1kfmkHAL04j+7QCFhry+aoRWfXlCxHJPWjdTJqeJT+2PSNsZ5LwfgE1NLjw6LqjnQbcRsWuAf+j6N1N/P3YFGNh++151whdoYeiOOnQFRpWnjX1UrIpj0iDg7d/KV9IIcddG0d7QgphGtMEkTBwlfSSMsJLmkgBQoXSQL2MyVCprJjs9GycuHUkKCef3aD6GBjLVI9+xXkSaRkl3Ge3KbS5hrCmF8NDm9yBaTkG1/wZ7i0rqJfzZeBG1u61kS0hVy39jBvihwC/4svOhr6ZSFnsCYEuFLmpgy5q/nJJvGaeSIc7gQi+gq1Wz08TF9NGGBaA4QOpbjRy5q8L+AiU8cpInd+bcS510DwwfOe7xD1GubeBGXK+ovKcKfPOQ0vvJwLl4svHZK8HEr3DUPW9cF1kiAAoA9qgBH2Jr2qR+8IIBAwhxt1BKSozjpJj1DKoOdTHhvaWTqBtH5tyMv327/8YpzN9HigkFqsXv6BkQpiT0=,iv:/oC4FIOAF98h9MjAsBuvj6rObu/zCxOFarR67rwL8OE=,tag:MNTS5xMl4lswQVU1wcMljw==,type:str]",
+	"sops": {
+		"age": [
+			{
+				"recipient": "age1cnktwwj4lq4lm5qa3vxn2ft5n38h557smr2f58t9vz4zum5w0udqzzle6c",
+				"enc": "-----BEGIN AGE ENCRYPTED FILE-----\nYWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSByS1dUek95M1VraFJ4QzNm\nR1dRdDROeFZ4YjIvdUVDbDg2M2V4cEh3MEJBCndqWU5IY2pYanVXdFIzWmoyb2ZF\ndE9jNmdmZElwL295cEFCaUhtK3FWdG8KLS0tIDNGdUl1STNZbUNVWHVRZnNGWXZ0\nbXNnd2REalFmQlB6WnoxRGNOVllxb0UKfMVt401k9mqzYIxbMXARdQtPQIN26RH3\nsO/BaLw7UQhVtw0PHHVoEEJMv0PBBDRMiZQ3EVAmSwobDXUFLwhmIw==\n-----END AGE ENCRYPTED FILE-----\n"
+			}
+		],
+		"lastmodified": "2026-04-17T13:46:16Z",
+		"mac": "ENC[AES256_GCM,data:pRcn2YgvCNa+LZxhniDmKH8r52hbaeiPe+NGHF/F4QhpWeMnFsAEgPZw3WRSlIymBnRfLK5IIlFRCIZWEwxO4GhxWiZv3ogAiWhIjm6P/wUctBBDMzUBBvq0r61/f8TH9dev1mnNUFqGQJNyL1BSciUuH4K7y8OWF0UH8+/dqLU=,iv:XoubcMmlYXDj/2Rg/4AurMVcPV9HGf1trN6wdIM4kh4=,tag:e3j+zB7sFvPOFuu7ZjenMQ==,type:str]",
+		"version": "3.12.1"
+	}
+}
