@@ -1,52 +1,14 @@
-- "Media":
-  - "Immich":
-      description: Photo and Video Backup
-      href: https://immich.truenas.au.excloo.dev
-      icon: server
-  - "Redlib":
-      description: Reddit Frontend
-      href: https://redlib.truenas.au.excloo.dev
-      icon: redlib
-  - "RoMM":
-      description: ROM and Game Library
-      href: https://romm.truenas.au.excloo.dev
-      icon: romm
-- "Productivity":
-  - "Linkwarden":
-      description: Bookmark and Web Archive Manager
-      href: https://linkwarden.truenas.au.excloo.dev
-      icon: linkwarden
-  - "Miniflux":
-      description: RSS Feed Reader
-      href: https://miniflux.truenas.au.excloo.dev
-      icon: miniflux
-- "Security":
-  - "Vaultwarden":
-      description: Password Manager
-      href: https://vaultwarden.truenas.au.excloo.dev
-      icon: vaultwarden
-- "System":
-  - "Beszel":
-      description: Resource Monitoring Dashboard
-      href: https://beszel.truenas.au.excloo.dev
-      icon: beszel
-  - "Dozzle":
-      description: Docker Log Viewer
-      href: https://dozzle.truenas.au.excloo.dev
-      icon: dozzle
-  - "Gatus":
-      description: Health Monitoring and Status Page
-      href: https://status.excloo.com
-      icon: gatus
-  - "Homepage":
-      description: Application Dashboard
-      href: https://homepage.truenas.au.excloo.dev
-      icon: homepage
-  - "Netboot":
-      description: Network Boot Server
-      href: https://netbootxyz.truenas.au.excloo.dev
-      icon: netboot
-  - "Syncthing":
-      description: File Synchronisation
-      href: https://syncthing.truenas.au.excloo.dev
-      icon: syncthing
+{
+	"data": "ENC[AES256_GCM,data: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,iv:rcpOO9ZvouTT6+qhtFNmsvbEIAm3qw75eEbt/KfyaDE=,tag:NGi2QYjSgfpNc1v769xytQ==,type:str]",
+	"sops": {
+		"age": [
+			{
+				"recipient": "age1cnktwwj4lq4lm5qa3vxn2ft5n38h557smr2f58t9vz4zum5w0udqzzle6c",
+				"enc": "-----BEGIN AGE ENCRYPTED FILE-----\nYWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSAzMlE2Z3pyR0pTUUhXdzVj\nMWp0RUZ4WmpRY0Q4T2tJN2dSSEZiMllqWlZVClBQZDh6U0UxZTl3U01KayszQlRL\nU0p5NFJUM0ZyVDNGNGIwWFkvS2ZYMncKLS0tIDAwTXJISW00K3BhNlFLRmk2Z0lx\nK0dOaTF4VW9YRXk3bGpTWUozdGpycXcKphcXcGuqB9Z0n/w1laJCxX6OvCgSb49i\nJKDwwSDUPcHMUYwkHLN1R2pIVY7AJ0sTGOOqVPErct0ZGAhSaoQrZw==\n-----END AGE ENCRYPTED FILE-----\n"
+			}
+		],
+		"lastmodified": "2026-04-17T13:46:16Z",
+		"mac": "ENC[AES256_GCM,data:3FAtVdtMwhjyhobLl2za/VLd9AbtRayN5oAW5kbHRRXsybIFgtA3LbTzCebByC85FE34+GQim46tDA73Q7y4W81xoBLdUF/PfDz79IRPlc4WkDegq9j9XsEI2x0Mw7P9AG+5E3TDo330YH0gSYbzZ5TfyZobrNQ1AAkDlrGENKE=,iv:3i/M/0lRbbAkJ5rQ3akT2P6Y5W5ejw4Cq9+To0jZCe0=,tag:dXn6VW36oSWHUtQIZidWiQ==,type:str]",
+		"version": "3.12.1"
+	}
+}
