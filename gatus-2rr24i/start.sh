@@ -1,6 +1,14 @@
-#!/bin/sh
-set -e
-export PATH="/app:$PATH"
-tailscaled --socket=/var/run/tailscale/tailscaled.sock --state=/var/lib/tailscale/tailscaled.state &
-tailscale up --authkey=${TAILSCALE_AUTH_KEY} --hostname=gatus &
-GATUS_CONFIG_PATH=/app/config gatus
+{
+	"data": "ENC[AES256_GCM,data:Zv29RluKsQ9rwdcH8hLdoOA7gAzBrIFiGtBVNJnmVMDcs3Txy3qHi01EK8+FMltPfZCVJ1LokK8Gyz7vEj/jIeRYXyCmKKymS6tkb37nub/t/wKcG43LYDuCbocLj45PPnx8QhRW64R0NwrOmcDPSveyVNIdsAvYc3CtvMbQwQIDSmSR4tdjW9YUU/GLA6uDBatqXHmNLgO+H51kYS67UjuwAzuU1t5X5E2dIrsL6ewA/U7XL9OfhNrKS5X/5JKvru4YecvuPJsLPZc2Tk1JvfvcgIOROxcJ4wHaDPx66FzfctoYv1SDpXFKUPpgNvpYME0=,iv:pfhQFRNvLPymxOZPASeRZkPqxRQxas+dSU6TXIdHGoo=,tag:u5hmfuUpE158HCa6zCM24g==,type:str]",
+	"sops": {
+		"age": [
+			{
+				"recipient": "age1cnktwwj4lq4lm5qa3vxn2ft5n38h557smr2f58t9vz4zum5w0udqzzle6c",
+				"enc": "-----BEGIN AGE ENCRYPTED FILE-----\nYWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBRZGhmTDFYZzJocnM2Z0hl\nYXRWdTJuQVo0dlhTNGJMZitRR1pIWTNnK0NBCmdEd3VtVXJ4bXFqMlRFOGhFMlFE\nV0NDR3RPaTRjS1FLV1BBcjRJZy9qMXcKLS0tIFk0SWFUcW9aN2lyMUFSSVFyQS9D\nSlYvMU1SNnFjd1Y0QWN4MUFGQ0NtQmcKDWjB3dqzI/Y9ifoxMo2fAa68/nYhXJNb\nezEarMNMJlYxPmRkfW4Ezv0rp3CvGqrK2pGwYHn6lXx5duFdGu0Sbg==\n-----END AGE ENCRYPTED FILE-----\n"
+			}
+		],
+		"lastmodified": "2026-04-17T13:46:16Z",
+		"mac": "ENC[AES256_GCM,data:M5w80tBJpB3CVX/u8Y13QBtAA4GtDL4YsdbQO3IOH5PSoES50a9Gj3Nfo2ogJhNObzjYRT9zvqlhpF3FGT+cdD+QM1NuGFGniW14SjgMfrFklMTM2k6m0KxE/xGAHX6UzXGcZ1hfBiAi6Cdt6MUZ57tzjjqgzD1mofP/fIpp2vo=,iv:LLq4Lh/Geb1eVZ803GYEMeAJrqQmgXSiq8D8NXGMV6s=,tag:CkmfS+pKyqWfWXRIx7fi/w==,type:str]",
+		"version": "3.12.1"
+	}
+}
