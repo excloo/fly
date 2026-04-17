@@ -1,0 +1,15 @@
+headerStyle: clean
+title: Homepage
+layout:
+  "Media":
+    columns: 4
+    style: row
+  "Productivity":
+    columns: 4
+    style: row
+  "Security":
+    columns: 4
+    style: row
+  "System":
+    columns: 4
+    style: row
