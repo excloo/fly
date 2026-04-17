@@ -69,6 +69,8 @@ jobs:
         run: find . -type f | xargs grep -l 'BEGIN AGE ENCRYPTED FILE' | xargs -n 1 -r sops --decrypt --in-place
       - name: Create App
         run: flyctl apps create "$APP" || true
+      - name: Add Certificates                                                                                                        
+        run: test -f .certs && xargs -a .certs -I{} flyctl certs add {} --app "$APP" || true                                    
       - name: Import Secrets
         run: test -f .env && grep -v '^sops_' .env | flyctl secrets import --app "$APP" || true
       - name: Deploy
