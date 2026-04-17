@@ -1,0 +1,52 @@
+- "Media":
+  - "Immich":
+      description: Photo and Video Backup
+      href: https://immich.truenas.au.excloo.dev
+      icon: server
+  - "Redlib":
+      description: Reddit Frontend
+      href: https://redlib.truenas.au.excloo.dev
+      icon: redlib
+  - "RoMM":
+      description: ROM and Game Library
+      href: https://romm.truenas.au.excloo.dev
+      icon: romm
+- "Productivity":
+  - "Linkwarden":
+      description: Bookmark and Web Archive Manager
+      href: https://linkwarden.truenas.au.excloo.dev
+      icon: linkwarden
+  - "Miniflux":
+      description: RSS Feed Reader
+      href: https://miniflux.truenas.au.excloo.dev
+      icon: miniflux
+- "Security":
+  - "Vaultwarden":
+      description: Password Manager
+      href: https://vaultwarden.truenas.au.excloo.dev
+      icon: vaultwarden
+- "System":
+  - "Beszel":
+      description: Resource Monitoring Dashboard
+      href: https://beszel.truenas.au.excloo.dev
+      icon: beszel
+  - "Dozzle":
+      description: Docker Log Viewer
+      href: https://dozzle.truenas.au.excloo.dev
+      icon: dozzle
+  - "Gatus":
+      description: Health Monitoring and Status Page
+      href: https://status.excloo.com
+      icon: gatus
+  - "Homepage":
+      description: Application Dashboard
+      href: https://homepage.truenas.au.excloo.dev
+      icon: homepage
+  - "Netboot":
+      description: Network Boot Server
+      href: https://netbootxyz.truenas.au.excloo.dev
+      icon: netboot
+  - "Syncthing":
+      description: File Synchronisation
+      href: https://syncthing.truenas.au.excloo.dev
+      icon: syncthing
