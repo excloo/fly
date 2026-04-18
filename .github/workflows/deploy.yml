@@ -3,11 +3,11 @@ name: Deploy
 on:
   push:
     paths:
-      - '**'
+      - "**"
   workflow_dispatch:
     inputs:
       path:
-        description: 'App to deploy or leave empty for all'
+        description: "App to deploy or leave empty for all"
         required: false
 
 jobs:
@@ -29,7 +29,7 @@ jobs:
           dir_names: true
           dir_names_max_depth: 1
           dir_names_exclude_current_dir: true
-          files_ignore: '.*/**'
+          files_ignore: ".*/**"
           matrix: true
       - name: Manual Files
         id: manual
@@ -47,8 +47,8 @@ jobs:
     name: Deploy
     needs: [changed-files]
     runs-on: ubuntu-latest
-    concurrency:                  
-      cancel-in-progress: true                              
+    concurrency:
+      cancel-in-progress: true
       group: deploy-${{ matrix.app }}
     defaults:
       run:
@@ -72,8 +72,8 @@ jobs:
         run: find . -type f | xargs grep -l 'BEGIN AGE ENCRYPTED FILE' | xargs -n 1 -r sops --decrypt --in-place
       - name: Create App
         run: flyctl apps create "$APP" || true
-      - name: Add Certificates                                                                                                        
-        run: test -f .certs && xargs -a .certs -I{} flyctl certs add {} --app "$APP" || true                                    
+      - name: Add Certificates
+        run: test -f .certs && xargs -a .certs -I{} flyctl certs add {} --app "$APP" || true
       - name: Import Secrets
         run: test -f .env && grep -v '^sops_' .env | flyctl secrets import --app "$APP" || true
       - name: Deploy
